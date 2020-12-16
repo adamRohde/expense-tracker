@@ -7,15 +7,22 @@ import ExpenseList from "./components/ExpenseList";
 
 function App() {
   const [inputText, setInputText] = useState("");
+  const [expenses, setExpenses] = useState([]);
   return (
       <div className="App">
           <header>
-            <h1>Adam's Expense Tracker {inputText}</h1>
+            <p>Adam's Expense Tracker</p>
           </header>
-          <Form  setInputText={setInputText}/>
+          <Form 
+            inputText=    {inputText}
+            expenses=     {expenses} 
+            setExpenses=  {setExpenses}
+            setInputText= {setInputText}/>
+
           <ExpenseList />
       </div>
   );
 }
 
 export default App;
+  
