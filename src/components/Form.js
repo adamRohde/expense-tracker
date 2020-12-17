@@ -1,32 +1,72 @@
 import React from "react";
 
-const Form = ({ setInputText, expenses, setExpenses, inputText }) =>{
-    const inputTextHandler = (e) => {
-        console.log(e.target.value);
-        setInputText(e.target.value);
+const Form = ({ expenses, setExpenses,
+                expenseType, setExpenseType,
+                vendor, setVendor,
+                expenseDate,  setExpenseDate,
+                dollarAmount, setDollarAmount }) => {
+
+    //Expense Type
+    const selectExpenseTypeHandler = (e) => {
+        console.log("Selection Changed");
+        console.log("Expense Type " + e.target.value);
+        setExpenseType(e.target.value);
     };
-    const submitTodoHandler = (e) => {
+    //Vendor
+    const inputVendorHandler = (e) => {
+        console.log("Vendor " + e.target.value);
+        setVendor(e.target.value);
+    };
+    //Expense Date
+    const inputExpenseDateHandler = (e) => {
+    console.log("Expense Date " + e.target.value);
+    setExpenseDate(e.target.value);
+    };
+    //Dollar Amount
+    const inputDollarAmountHandler = (e) => {
+        console.log("Dollar Amount " + e.target.value);
+        setDollarAmount(dollarAmount = e.target.value);
+    };
+  
+    const submitExpenseHandler = (e) => {
         //prevents the screen from refreshing
         e.preventDefault();
-        console.log("pressin the button");
+        console.log("Submitting my expenses");
         setExpenses([
-            ...expenses, {text: inputText, completed: false, id: Math.random() * 1000 }
+            ...expenses, {expenseType: expenseType, vendor: vendor, expenseDate: expenseDate,  dollarAmount: dollarAmount, id: Math.random() * 1000 }
         ]);
     };
 
     return(
         <form>
-            <input onChange={inputTextHandler} type="text" className="addExpense-input" />
-            <button onClick={submitTodoHandler} className="addExpense-button" type="submit">
-                <i className="fas fa-plus-square"></i>
-            </button>
-            <div className="select">
-                <select name="todos" className="filter-todo">
-                    <option value="all">Credit</option>
-                    <option value="completed">Debit</option>
-                    <option value="uncompleted">Cash</option>
-                </select>
+            <div className="form-row">
+                <div className="form-leftColumn">
+                    <div className="input-expense">
+                        <select name="todos" onChange={selectExpenseTypeHandler} className="filter-todo">
+                            <option value="none">None</option>
+                            <option value="credit">Credit</option>
+                            <option value="debit">Debit</option>
+                            <option value="cash">Cash</option>
+                        </select>
+                    </div>
+                </div>
+                <div className="form-rightColumn">
+                     <input onChange={inputVendorHandler} name="amount" className="input-expense" placeholder="Who'd you give money?" />
+                </div>
             </div>
+            <div className="form-row">
+                <div className="form-leftColumn">
+                    <div>
+                        <input type="date" onChange={inputExpenseDateHandler} name="date" className="input-expense" />
+                    </div>
+                </div>
+                <div className="form-rightColumn">
+                    <input onChange={inputDollarAmountHandler} name="amount" className="input-expense" placeholder="How much?" />
+                </div>
+            </div>
+                <button onClick={submitExpenseHandler} className="addExpense-button" type="submit">
+                    <i className="fas fa-plus-square"></i>
+                </button>
         </form>
     );
 }

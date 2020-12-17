@@ -14,13 +14,29 @@ header {
   font-size: 2rem;
 }
 
-header,
-form {
+header{
   min-height: 7vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+form {
+  min-height: 7vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-row{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 form input,
 form button {
   padding: 0.5rem;
@@ -30,7 +46,8 @@ form button {
 }
 form button {
   color: #e0e0e0;
-  background: #f7fffe;
+  margin: 0.5rem;
+  background: #2d3994;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -40,8 +57,18 @@ form button:hover {
 }
 .expense-container {
   display: flex;  
+  margin-top: 5em;
   justify-content: center;
   align-items: center;
+}
+
+.input-expense{
+
+  margin: 0.5em;
+  font-size: 1rem;
+  display: flex;
+  padding: 1rem;
+  justify-content: flex-end;
 }
 
 .expense-list {
@@ -49,10 +76,22 @@ form button:hover {
   list-style: none;
 }
 
+.form-rightColumn{
+
+display: grid;
+justify-items: end;
+
+}
+
+.form-leftColumn{
+  display: grid;
+  justify-items: start;
+}
+
 .expense {
   margin: 0.5rem;
   background: rgb(255, 255, 255);
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: rgb(90, 90, 90);
   display: flex;
   justify-content: space-between;
@@ -68,18 +107,31 @@ form button:hover {
 
 .trash-btn,
 .complete-btn {
-  background: #6e6e6e;
+  height: 5vh;
+  /* background: #ffffff;
   color: rgb(0, 0, 0);
   border: none;
   padding: 1rem;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1rem; */
 }
 .complete-btn {
   background: rgb(11, 212, 162);
 }
-.expense-item {
+.expense-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 0rem 0.5rem;
+  margin: 1.5em, 0em, 0em, 0.5em;
+}
+
+.expense-item {
+  min-width: 20vh;
+  height: 5vh;
+  place-self: center;
+  background:rgb(255, 255, 255);
+  padding: 0rem 0.5rem;
+  margin: 0.5em 0.2em 0.5em 0.2em;
 }
 
 .fa-trash,
