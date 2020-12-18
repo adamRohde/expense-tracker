@@ -10,6 +10,7 @@ const Form = ({ expenses, setExpenses,
         color: 'blue', 
         width: '35vh', 
         height: '7vh',
+        border: '1px darkgrey solid'
     };
 
     //Expense Type
@@ -47,7 +48,7 @@ const Form = ({ expenses, setExpenses,
         <form>
             <div className="form-row">
                 <div className="form-leftColumn">
-                    <select name="todos" onChange={selectExpenseTypeHandler} className="input-expense" style={inputStyle}>
+                    <select onChange={selectExpenseTypeHandler} className="input-expense" style={inputStyle}>
                         <option value="none">None</option>
                         <option value="credit">Credit</option>
                         <option value="debit">Debit</option>

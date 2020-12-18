@@ -22,11 +22,9 @@ header{
 }
 
 form {
-  /* min-height: 7vh; */
   display: grid;
   grid-template-rows: 1fr 1fr;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .form-row{
@@ -50,6 +48,7 @@ form button {
 
 form button {
   color: #e0e0e0;
+  min-height: 5vh;
   margin: 1.0em;
   background: #3f4363;
   cursor: pointer;
@@ -85,7 +84,6 @@ tr:nth-child(odd){
   background-color: lightblue;
 }
 
-
 /* need */
 .input-expense{
   margin: 1.0em;
@@ -94,84 +92,8 @@ tr:nth-child(odd){
   display: flex;
   padding: 1rem;
   color: whitesmoke;
-  justify-content: flex-end;
 }
 
-/* .expense-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 0rem 0.5rem;
-  margin: 1.5em, 0em, 0em, 0.5em;
-} */
-
-/* .expense-item {
-  display: grid;
-  height: 5vh;
-  place-self: center;
-  background:rgb(255, 255, 255);
-  padding: 0rem 0.5rem;
-  margin: 0.5em 0.2em 0.5em 0.2em;
-} */
-
-/* .form-rightColumn{
-  display: grid;
-  justify-items: end;
-} */
-
-/* .form-leftColumn{
-  display: grid;
-  justify-items: start;
-} */
-
-/* .expense {
-  margin: 0.5rem;
-  background: rgb(255, 255, 255);
-  font-size: 1rem;
-  color: rgb(90, 90, 90);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 1s ease;
-} */
-
-/* .filter-todo {
-  padding: 1rem;
-} */
-
-/* .todo li {
-  flex: 1;
-} */
-
-/* .trash-btn,
-.complete-btn {
-  height: 5vh;
-} */
-
-
-/* .complete-btn {
-  background: rgb(11, 212, 162);
-} */
-
-/* li{
-  text-align: center;
-} */
-
-/* .fa-trash,
-.fa-check {
-  pointer-events: none;
-} */
-
-/* .fall {
-  transform: translateY(10rem) rotateZ(20deg);
-  opacity: 0;
-} */
-
-/* .completed {
-  text-decoration: line-through;
-  opacity: 0.5;
-} */
-
-/*CUSTOM SELECTOR */
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -179,40 +101,6 @@ select {
   appearance: none;
   outline: 0;
   box-shadow: none;
-  border: 0 !important;
+  /* border: 0 !important; */
   background-image: none;
 }
-
-/* Custom Select */
-/* .select {
-  margin: 1rem;
-  position: relative;
-  overflow: hidden;
-} */
-
-/* 
-select {
-  color: #6e6e6e;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-  width: 12rem;
-} */
-/* Arrow */
-
-/* .select::after {
-  content: "\25BC";
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1rem;
-  background: #e0e0e0;
-  cursor: pointer;
-  pointer-events: none;
-} */
-/* Transition */
-/*
-.select:hover::after {
-  transform: scale(1.5);
-}
-*/
-
