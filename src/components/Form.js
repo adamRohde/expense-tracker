@@ -6,6 +6,12 @@ const Form = ({ expenses, setExpenses,
                 expenseDate,  setExpenseDate,
                 dollarAmount, setDollarAmount }) => {
 
+    const inputStyle = {
+        color: 'blue', 
+        width: '35vh', 
+        height: '7vh',
+    };
+
     //Expense Type
     const selectExpenseTypeHandler = (e) => {
         console.log("Selection Changed");
@@ -40,37 +46,29 @@ const Form = ({ expenses, setExpenses,
     return(
         <form>
             <div className="form-row">
-
                 <div className="form-leftColumn">
-                    <select name="todos" onChange={selectExpenseTypeHandler} className="filter-todo">
+                    <select name="todos" onChange={selectExpenseTypeHandler} className="input-expense" style={inputStyle}>
                         <option value="none">None</option>
                         <option value="credit">Credit</option>
                         <option value="debit">Debit</option>
                         <option value="cash">Cash</option>
                     </select>
                 </div>
-
                 <div className="form-rightColumn">
-                     <input onChange={inputVendorHandler} name="amount" className="input-expense" placeholder="Who'd you give money?" />
+                     <input onChange={inputVendorHandler} name="amount" className="input-expense" placeholder="Who?" style={inputStyle}/>
                 </div>
-
             </div>
             <div className="form-row">
-
                 <div className="form-leftColumn">
-                    <input type="date" onChange={inputExpenseDateHandler} name="date" className="input-expense" />
+                    <input type="date" onChange={inputExpenseDateHandler} name="date" className="input-expense"style={inputStyle}/>
                 </div>
-
                 <div className="form-rightColumn">
-                    <input onChange={inputDollarAmountHandler} name="amount" className="input-expense" placeholder="How much?" />
+                    <input onChange={inputDollarAmountHandler} name="amount" className="input-expense" placeholder="How much?" style={inputStyle}/>
                 </div>
-
             </div>
-
             <button onClick={submitExpenseHandler} className="addExpense-button" type="submit">
-                <i className="fas fa-plus-square"></i>
+                <i>Add Expense</i>
             </button>
-
         </form>
     );
 }

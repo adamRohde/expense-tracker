@@ -37,4 +37,7 @@
   
 //     )
 // }
+
+style={{width: "20vh"}}
+
 // export default ExpenseList;  

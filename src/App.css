@@ -22,39 +22,45 @@ header{
 }
 
 form {
-  min-height: 7vh;
+  /* min-height: 7vh; */
   display: grid;
   grid-template-rows: 1fr 1fr;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .form-row{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
   justify-content: center;
   align-items: center;
 }
 
+select,
 form input,
 form button {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
-  background: white;
+  font-size: medium;
+  color: red;
+  color: darkgray;
+  background: rgb(255, 255, 255);
 }
+
 form button {
   color: #e0e0e0;
-  margin: 0.5rem;
-  background: #2d3994;
+  margin: 1.0em;
+  background: #3f4363;
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 form button:hover {
   background: #d4d4d4;
   color: white;
 }
+
 .expense-container {
   display: flex;  
   margin-top: 1em;
@@ -62,78 +68,62 @@ form button:hover {
   align-items: center;
 }
 
-table{
-  /* display: flex;  
-  background-color: black;
-  margin-top: 5em;
-  justify-content: center;
-  align-items: center; */
-}
-
-tbody{
-  /* margin-top: 1em;
-  justify-content: center;
-  align-items: center; */
-}
-
-
+/* need */
 th{
-  margin-top: 0em;
-  
   min-width: 20vh; 
 }
 
+/* need */
 td{
   place-self: center;
-  min-width:20vh; 
   background-color: rgb(255, 255, 255);
   text-align: center;
 }
 
+/* The only thing this does is makes the header lightblue....not really working as expected */
 tr:nth-child(odd){
   background-color: lightblue;
 }
 
+
+/* need */
 .input-expense{
-  margin: 0.5em;
+  margin: 1.0em;
+  width: 25vh;
   font-size: 1rem;
   display: flex;
   padding: 1rem;
+  color: whitesmoke;
   justify-content: flex-end;
 }
 
-.expense-list {
-  min-width: 30%;
-  list-style: none;
-}
-
-.expense-row {
+/* .expense-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 0rem 0.5rem;
   margin: 1.5em, 0em, 0em, 0.5em;
-}
+} */
 
-.expense-item {
+/* .expense-item {
   display: grid;
   height: 5vh;
   place-self: center;
   background:rgb(255, 255, 255);
   padding: 0rem 0.5rem;
   margin: 0.5em 0.2em 0.5em 0.2em;
-}
+} */
 
-.form-rightColumn{
+/* .form-rightColumn{
   display: grid;
   justify-items: end;
-}
+} */
 
-.form-leftColumn{
+/* .form-leftColumn{
   display: grid;
   justify-items: start;
-}
+} */
 
-.expense {
+/* .expense {
   margin: 0.5rem;
   background: rgb(255, 255, 255);
   font-size: 1rem;
@@ -142,48 +132,44 @@ tr:nth-child(odd){
   justify-content: space-between;
   align-items: center;
   transition: all 1s ease;
-}
+} */
 
-.filter-todo {
+/* .filter-todo {
   padding: 1rem;
-}
+} */
 
-.todo li {
+/* .todo li {
   flex: 1;
-}
+} */
 
-.trash-btn,
+/* .trash-btn,
 .complete-btn {
   height: 5vh;
-  /* background: #ffffff;
-  color: rgb(0, 0, 0);
-  border: none;
-  padding: 1rem;
-  cursor: pointer;
-  font-size: 1rem; */
-}
-.complete-btn {
+} */
+
+
+/* .complete-btn {
   background: rgb(11, 212, 162);
-}
+} */
 
-li{
+/* li{
   text-align: center;
-}
+} */
 
-.fa-trash,
+/* .fa-trash,
 .fa-check {
   pointer-events: none;
-}
+} */
 
-.fall {
+/* .fall {
   transform: translateY(10rem) rotateZ(20deg);
   opacity: 0;
-}
+} */
 
-.completed {
+/* .completed {
   text-decoration: line-through;
   opacity: 0.5;
-}
+} */
 
 /*CUSTOM SELECTOR */
 select {
@@ -198,19 +184,22 @@ select {
 }
 
 /* Custom Select */
-.select {
+/* .select {
   margin: 1rem;
   position: relative;
   overflow: hidden;
-}
+} */
+
+/* 
 select {
   color: #6e6e6e;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
   width: 12rem;
-}
+} */
 /* Arrow */
-.select::after {
+
+/* .select::after {
   content: "\25BC";
   position: absolute;
   top: 0;
@@ -219,7 +208,7 @@ select {
   background: #e0e0e0;
   cursor: pointer;
   pointer-events: none;
-}
+} */
 /* Transition */
 /*
 .select:hover::after {
