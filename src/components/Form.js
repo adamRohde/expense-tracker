@@ -40,33 +40,37 @@ const Form = ({ expenses, setExpenses,
     return(
         <form>
             <div className="form-row">
+
                 <div className="form-leftColumn">
-                    <div className="input-expense">
-                        <select name="todos" onChange={selectExpenseTypeHandler} className="filter-todo">
-                            <option value="none">None</option>
-                            <option value="credit">Credit</option>
-                            <option value="debit">Debit</option>
-                            <option value="cash">Cash</option>
-                        </select>
-                    </div>
+                    <select name="todos" onChange={selectExpenseTypeHandler} className="filter-todo">
+                        <option value="none">None</option>
+                        <option value="credit">Credit</option>
+                        <option value="debit">Debit</option>
+                        <option value="cash">Cash</option>
+                    </select>
                 </div>
+
                 <div className="form-rightColumn">
                      <input onChange={inputVendorHandler} name="amount" className="input-expense" placeholder="Who'd you give money?" />
                 </div>
+
             </div>
             <div className="form-row">
+
                 <div className="form-leftColumn">
-                    <div>
-                        <input type="date" onChange={inputExpenseDateHandler} name="date" className="input-expense" />
-                    </div>
+                    <input type="date" onChange={inputExpenseDateHandler} name="date" className="input-expense" />
                 </div>
+
                 <div className="form-rightColumn">
                     <input onChange={inputDollarAmountHandler} name="amount" className="input-expense" placeholder="How much?" />
                 </div>
+
             </div>
-                <button onClick={submitExpenseHandler} className="addExpense-button" type="submit">
-                    <i className="fas fa-plus-square"></i>
-                </button>
+
+            <button onClick={submitExpenseHandler} className="addExpense-button" type="submit">
+                <i className="fas fa-plus-square"></i>
+            </button>
+
         </form>
     );
 }

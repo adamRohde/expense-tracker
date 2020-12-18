@@ -1,22 +1,21 @@
 import React from 'react';
 
-const Expense = () => {
+const Expense = ({expenseType, dollarAmount, vendor, expenseDate }) => {
+    if (expenseDate ===""){
+        let d = new Date();
+        console.log(d.getMonth() + "/" +  d.getDay() + "/" + d.getFullYear());
+        expenseDate = d.getFullYear() + "-" +  d.getMonth() + "-" + d.getDay();
+    }
+    // if (dollarAmount ==""){
+    //     alert("Please enter a dollar amount");
+    // }
     return(
-        <div className="expense-row ">
-            <li className="expense-item">Hello</li>
-            <li className="expense-item">Hello</li>
-            <li className="expense-item">Hello</li>
-
-
-            {/* <button className="complete-btn">
-             <i className="fas fa-check"> </i>   
-            </button> */}
-
-            <button className="trash-btn">
-             <i className="fas fa-track">Delete</i>   
-            </button>
-
-        </div>
-    );
-};
+        <tr>
+            <td>{expenseDate}</td>
+            <td>${dollarAmount}</td>
+            <td>{vendor}</td>
+            <td>{expenseType}</td>
+        </tr>
+    
+    )};
 export default Expense;

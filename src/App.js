@@ -30,7 +30,7 @@ function App() {
             setExpenseDate=   {setExpenseDate}
             setInputText=     {setInputText} 
             setExpenses=      {setExpenses}/>
-          <ExpenseList />
+          <ExpenseList expenses={expenses} />
       </div>
   );
 }
