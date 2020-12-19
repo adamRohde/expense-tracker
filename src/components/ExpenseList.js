@@ -6,19 +6,18 @@ const ExpenseList = ({ expenses }) => {
    // console.log(expenses); 
     return(    
         <div className="expense-container">
-            <table>
+            <table className="table">
                 <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Amount</th>
-                        <th>Vendor</th>
-                        <th>Type</th>
-                    </tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Vendor</th>
+                    <th>Type</th>
                 </thead>   
                 <tbody>
-                    {expenses.map(expense => (
-                        <Expense expenseType={expense.expenseType} vendor={expense.vendor} dollarAmount={expense.dollarAmount} expenseDate={expense.expenseDate} />
-                    ))}
+                        {/* <th scope="row">1</th> */}
+                        {expenses.map(expense => (
+                            <Expense expenseType={expense.expenseType} vendor={expense.vendor} dollarAmount={expense.dollarAmount} expenseDate={expense.expenseDate} />
+                        ))}
                 </tbody>
             </table>
         </div>

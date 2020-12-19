@@ -1,3 +1,11 @@
+:root {
+  --theme-color-nav: rgb(213, 213, 213);
+  --theme-color-back: rgb(255, 255, 255);
+  --theme-color-keys: rgb(191, 191, 191);
+  --theme-color-keys-secondary: rgb(191, 191, 191);
+  --theme-color-text: rgb(0, 0, 0);
+  --theme-color-burger: rgb(64, 64, 64);
+}
 
 * {
   margin: 0;
@@ -11,7 +19,11 @@ body {
   min-height: 100vh;
 }
 header {
-  font-size: 2rem;
+  margin-top: 2em;
+}
+
+h1{
+  color: black;
 }
 
 header{
@@ -67,9 +79,16 @@ form button:hover {
   align-items: center;
 }
 
+.table{
+  width: 20vh; 
+}
 /* need */
 th{
   min-width: 20vh; 
+  place-self: center;
+  text-align: center;
+  border-bottom: black 1px solid;
+  padding-bottom: 0.5em;
 }
 
 /* need */
@@ -81,7 +100,10 @@ td{
 
 /* The only thing this does is makes the header lightblue....not really working as expected */
 tr:nth-child(odd){
-  background-color: lightblue;
+  background-color: rgb(216, 216, 216);
+}
+tr:nth-child(even){
+  background-color: #f3f3f3;
 }
 
 /* need */
@@ -104,3 +126,35 @@ select {
   /* border: 0 !important; */
   background-image: none;
 }
+
+
+.navbar {
+  background: var(--theme-color-nav);
+  height: auto;
+}
+
+.navbar .btn {
+  background: var(--theme-color-nav);
+}
+
+.navbar .burger {
+  width: 2em;
+  height: 0.2em;
+  background-color: var(--theme-color-burger);
+  margin: 0.25em 0;
+  border-radius: 0.2em;
+}
+
+.navbar div {
+  background-color: var(--theme-color-nav);
+  color: var(--theme-color-text);
+}
+
+.navbar input {
+  color: var(--theme-color-text);
+}
+
+.navbar label {
+  color: var(--theme-color-text);
+}
+

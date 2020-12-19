@@ -6,9 +6,6 @@ const Expense = ({expenseType, dollarAmount, vendor, expenseDate }) => {
         console.log(d.getMonth() + "/" +  d.getDay() + "/" + d.getFullYear());
         expenseDate = d.getFullYear() + "-" +  d.getMonth() + "-" + d.getDay();
     }
-    // if (dollarAmount ==""){
-    //     alert("Please enter a dollar amount");
-    // }
     return(
         <tr>
             <td>{expenseDate}</td>
@@ -16,6 +13,6 @@ const Expense = ({expenseType, dollarAmount, vendor, expenseDate }) => {
             <td>{vendor}</td>
             <td>{expenseType}</td>
         </tr>
-    
     )};
+
 export default Expense;

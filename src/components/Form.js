@@ -39,16 +39,24 @@ const Form = ({ expenses, setExpenses,
         //prevents the screen from refreshing
         e.preventDefault();
         console.log("Submitting my expenses");
-        setExpenses([
-            ...expenses, {expenseType: expenseType, vendor: vendor, expenseDate: expenseDate,  dollarAmount: dollarAmount, id: Math.random() * 1000 }
-        ]);
+
+        if (dollarAmount == ''){
+
+            alert("Please add a dollar amount");
+            console.log("No money");
+
+        }else{
+            setExpenses([
+                ...expenses, {expenseType: expenseType, vendor: vendor, expenseDate: expenseDate,  dollarAmount: dollarAmount, id: Math.random() * 1000 }
+            ]);
+        }
     };
 
     return(
         <form>
             <div className="form-row">
                 <div className="form-leftColumn">
-                    <select onChange={selectExpenseTypeHandler} className="input-expense" style={inputStyle}>
+                    <select onChange={selectExpenseTypeHandler} className="input-expense form-select" style={inputStyle}>
                         <option value="none">None</option>
                         <option value="credit">Credit</option>
                         <option value="debit">Debit</option>
@@ -56,18 +64,18 @@ const Form = ({ expenses, setExpenses,
                     </select>
                 </div>
                 <div className="form-rightColumn">
-                     <input onChange={inputVendorHandler} name="amount" className="input-expense" placeholder="Who?" style={inputStyle}/>
+                     <input onChange={inputVendorHandler} name="venodr" className="input-expense form-control" placeholder="Who?" style={inputStyle}/>
                 </div>
             </div>
             <div className="form-row">
                 <div className="form-leftColumn">
-                    <input type="date" onChange={inputExpenseDateHandler} name="date" className="input-expense"style={inputStyle}/>
+                    <input type="date" onChange={inputExpenseDateHandler} name="date" className="input-expense form-control"style={inputStyle}/>
                 </div>
                 <div className="form-rightColumn">
-                    <input onChange={inputDollarAmountHandler} name="amount" className="input-expense" placeholder="How much?" style={inputStyle}/>
+                    <input onChange={inputDollarAmountHandler} name="amount" className="input-expense form-control" placeholder="How much?" style={inputStyle}/>
                 </div>
             </div>
-            <button onClick={submitExpenseHandler} className="addExpense-button" type="submit">
+            <button onClick={submitExpenseHandler} className="btn btn-primary addExpense-button" type="submit">
                 <i>Add Expense</i>
             </button>
         </form>

@@ -1,9 +1,10 @@
 
 import React, { useState } from "react";
-import './App.css';
+import './CSS/App.css';
 //Importing Components
 import Form from './components/Form';
 import ExpenseList from "./components/ExpenseList"; 
+import Navbar from './components/Navbar';
 
 function App() {
   const [inputText, setInputText] = useState(""); 
@@ -14,9 +15,13 @@ function App() {
   const [expenses, setExpenses] = useState([]);
   return (
       <div className="App">
+
+          <Navbar />
+
           <header>
-            <p>Adam's Expense Tracker</p>
+            <h1 className="display-5">Expense Tracker</h1>
           </header>
+
           <Form
             dollarAmount =    {dollarAmount}
             vendor =          {vendor}
