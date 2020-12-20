@@ -28,6 +28,8 @@ const Form = ({ expenses, setExpenses,
     const inputExpenseDateHandler = (e) => {
     console.log("Expense Date " + e.target.value);
     setExpenseDate(e.target.value);
+    
+
     };
     //Dollar Amount
     const inputDollarAmountHandler = (e) => {

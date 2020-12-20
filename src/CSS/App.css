@@ -1,160 +1,128 @@
 :root {
-  --theme-color-nav: rgb(213, 213, 213);
-  --theme-color-back: rgb(255, 255, 255);
-  --theme-color-keys: rgb(191, 191, 191);
-  --theme-color-keys-secondary: rgb(191, 191, 191);
-  --theme-color-text: rgb(0, 0, 0);
-  --theme-color-burger: rgb(64, 64, 64);
+    --theme-color-nav: rgb(213, 213, 213);
+    --theme-color-back: rgb(255, 255, 255);
+    --theme-color-keys: rgb(191, 191, 191);
+    --theme-color-keys-secondary: rgb(191, 191, 191);
+    --theme-color-text: rgb(0, 0, 0);
+    --theme-color-burger: rgb(64, 64, 64);
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body {
-  background-image: linear-gradient(120deg, #cccccc 0%, #998686 100%);
-  color: rgb(122, 89, 89);
-  font-family: "Poppins", sans-serif;
-  min-height: 100vh;
+    background-image: linear-gradient(120deg, #cccccc 0%, #998686 100%);
+    color: rgb(122, 89, 89);
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
 }
 header {
-  margin-top: 2em;
+    margin-top: 2em;
 }
 
-h1{
-  color: black;
+h1 {
+    color: black;
 }
 
-header{
-  min-height: 7vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+header {
+    min-height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 form {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
 }
 
-.form-row{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  align-items: center;
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
 }
 
 select,
 form input,
 form button {
-  padding: 0.5rem;
-  font-size: 2rem;
-  border: none;
-  font-size: medium;
-  color: red;
-  color: darkgray;
-  background: rgb(255, 255, 255);
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    font-size: medium;
+    color: red;
+    color: darkgray;
+    background: rgb(255, 255, 255);
 }
 
 form button {
-  color: #e0e0e0;
-  min-height: 5vh;
-  margin: 1.0em;
-  background: #3f4363;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    color: #e0e0e0;
+    min-height: 5vh;
+    margin: 1em;
+    background: #3f4363;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 form button:hover {
-  background: #d4d4d4;
-  color: white;
+    background: #d4d4d4;
+    color: white;
 }
 
 .expense-container {
-  display: flex;  
-  margin-top: 1em;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    margin-top: 1em;
+    justify-content: center;
+    align-items: center;
 }
 
-.table{
-  width: 20vh; 
+.table {
+    width: 20vh;
 }
 /* need */
-th{
-  min-width: 20vh; 
-  place-self: center;
-  text-align: center;
-  border-bottom: black 1px solid;
-  padding-bottom: 0.5em;
+th {
+    min-width: 20vh;
+    place-self: center;
+    text-align: center;
+    border-bottom: black 1px solid;
+    padding-bottom: 0.5em;
 }
 
 /* need */
-td{
-  place-self: center;
-  background-color: rgb(255, 255, 255);
-  text-align: center;
+td {
+    place-self: center;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 /* The only thing this does is makes the header lightblue....not really working as expected */
-tr:nth-child(odd){
-  background-color: rgb(216, 216, 216);
+tr:nth-child(odd) {
+    background-color: rgb(216, 216, 216);
 }
-tr:nth-child(even){
-  background-color: #f3f3f3;
+tr:nth-child(even) {
+    background-color: #f3f3f3;
 }
 
 /* need */
-.input-expense{
-  margin: 1.0em;
-  width: 25vh;
-  font-size: 1rem;
-  display: flex;
-  padding: 1rem;
-  color: whitesmoke;
+.input-expense {
+    margin: 1em;
+    width: 25vh;
+    font-size: 1rem;
+    display: flex;
+    padding: 1rem;
+    color: whitesmoke;
 }
 
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
-  /* border: 0 !important; */
-  background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    /* border: 0 !important; */
+    background-image: none;
 }
-
-
-.navbar {
-  background: var(--theme-color-nav);
-  height: auto;
-}
-
-.navbar .btn {
-  background: var(--theme-color-nav);
-}
-
-.navbar .burger {
-  width: 2em;
-  height: 0.2em;
-  background-color: var(--theme-color-burger);
-  margin: 0.25em 0;
-  border-radius: 0.2em;
-}
-
-.navbar div {
-  background-color: var(--theme-color-nav);
-  color: var(--theme-color-text);
-}
-
-.navbar input {
-  color: var(--theme-color-text);
-}
-
-.navbar label {
-  color: var(--theme-color-text);
-}
-

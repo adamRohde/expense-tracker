@@ -1,11 +1,10 @@
-
 // import React from 'react';
 // import Expense from "./Expense";
 
 // const ExpenseList = ({ expenses }) => {
 //     console.log(expenses);
-   
-//     return(    
+
+//     return(
 //         <div>
 //             <table>
 //                 <tr>
@@ -14,7 +13,7 @@
 //                     <th>Vendor</th>
 //                     <th>Type</th>
 //                 </tr>
-//             </table>   
+//             </table>
 //             <div className="expense-container">
 //                 {/* <table>
 //                     <tr>
@@ -24,20 +23,17 @@
 //                     </tr>
 //                 <table/> */}
 
-
 //                 <div className="expense-list">
 //                     {expenses.map(expense => (
 //                         <tr>
 //                             <Expense expenseType={expense.expenseType} vendor={expense.vendor} dollarAmount={expense.dollarAmount} expenseDate={expense.expenseDate} />
 //                         </tr>
 //                     ))}
-//                 </div>       
+//                 </div>
 //             </div>
 //         </div>
-  
+
 //     )
 // }
 
-style={{width: "20vh"}}
-
-// export default ExpenseList;  
+// export default ExpenseList;
