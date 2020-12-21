@@ -17,32 +17,27 @@ class App extends React.Component {
 
     componentDidMount() {
         console.log("Component did mount/render");
-        this.setState({ inputText: "booger" });
-        // this.setState({
-        //     inputText: "booger"
-        //     dollarAmount: "10"
-        //     vendor: "Target"
-        //     expenseType: "Credit"
-        //     expenseDate: "12/20/2020"
-        //     expenses: [],
-        // });
+        this.setState({
+            inputText: "booger",
+            dollarAmount: "10",
+            vendor: "Target",
+            expenseType: "Credit",
+            expenseDate: "12/20/2020",
+            expenses: [],
+        });
     }
 
     renderContent() {
         if (!this.state.err) {
             console.log("we are error free! Render away");
             return (
-                (
-                    <Form
-                        dollarAmount={this.state.dollarAmount}
-                        vendor={this.state.vendor}
-                        expenseType={this.state.expenseType}
-                        expenseDate={this.state.expenseDate}
-                        inputText={this.state.inputText}
-                        expenses={this.state.expenses}
-                    />
-                ),
-                (<ExpenseList expenses={this.state.expenses} />)
+                <Form />
+                // dollarAmount={this.state.dollarAmount}
+                // vendor={this.state.vendor}
+                // expenseType={this.state.expenseType}
+                // expenseDate={this.state.expenseDate}
+                // inputText={this.state.inputText}
+                // expenses={this.state.expenses}
             );
         } else {
             console.log("The error is...." + this.state.err);

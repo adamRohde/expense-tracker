@@ -1,17 +1,20 @@
 import React from "react";
 
-const Expense = ({ expenseType, dollarAmount, vendor, expenseDate }) => {
-    if (expenseDate === "") {
+const Expense = (props) => {
+    console.log("we are in expenses");
+    console.log(props);
+
+    if (props.expenseDate === "") {
         let d = new Date();
         console.log(d.getMonth() + "/" + d.getDay() + "/" + d.getFullYear());
-        expenseDate = d.getFullYear() + "-" + d.getMonth() + "-" + d.getDay();
+        props.expenseDate = d.getFullYear() + "-" + d.getMonth() + "-" + d.getDay();
     }
     return (
         <tr>
-            <td>{expenseDate}</td>
-            <td>{dollarAmount}</td>
-            <td>{vendor}</td>
-            <td>{expenseType}</td>
+            <td>{props.expenseDate}</td>
+            <td>{props.dollarAmount}</td>
+            <td>{props.vendor}</td>
+            <td>{props.expenseType}</td>
         </tr>
     );
 };

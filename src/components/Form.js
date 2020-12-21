@@ -1,8 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import ExpenseList from "./ExpenseList";
 
 const Form = (props) => {
-    console.log("we are in the form " + props);
+    console.log("we are in the form ");
+    console.log(props);
+
     const inputStyle = {
         color: "blue",
         width: "35vh",
@@ -19,7 +21,7 @@ const Form = (props) => {
     //Vendor
     const inputVendorHandler = (e) => {
         console.log("Vendor " + e.target.value);
-        props.vendor = e.target.value;
+        //  this.setState({ vendor: e.target.value });
     };
     //Expense Date
     const inputExpenseDateHandler = (e) => {
@@ -35,20 +37,22 @@ const Form = (props) => {
     const submitExpenseHandler = (e) => {
         //prevents the screen from refreshing
         e.preventDefault();
-        console.log("Submitting my expenses");
+        console.log("Submitting my expenses" + e);
 
-        if (props.dollarAmount == "") {
-            alert("Please add a dollar amount");
-            console.log("No money");
-        } else {
-            <ExpenseList
-                expenseType={this.props.expenseType}
-                vendor={this.props.vendor}
-                expenseDate={this.props.expenseDate}
-                dollarAmount={this.props.dollarAmount}
-                id={Math.random() * 1000}
-            />;
-        }
+        <ExpenseList />;
+
+        // if (props.dollarAmount == "") {
+        //     alert("Please add a dollar amount");
+        //     console.log("No money");
+        // } else {
+        //     <ExpenseList
+        //         expenseType={this.props.expenseType}
+        //         vendor={this.props.vendor}
+        //         expenseDate={this.props.expenseDate}
+        //         dollarAmount={this.props.dollarAmount}
+        //         id={Math.random() * 1000}
+        //     />;
+        // }
     };
 
     return (

@@ -1,11 +1,30 @@
 import React from "react";
-//import Expense from "./Expense";
+import Expense from "./Expense";
 
 const ExpenseList = (props) => {
     const expenses = props.expenses;
     console.log(props);
     console.log(expenses);
-    return <div className="expense-container">Hello</div>;
+    return (
+        <table className="table">
+            <thead>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Vendor</th>
+                <th>Type</th>
+            </thead>
+            <tbody>
+                {props.expenses.map((expense) => (
+                    <Expense
+                        expenseType={expense.expenseType}
+                        vendor={expense.vendor}
+                        dollarAmount={expense.dollarAmount}
+                        expenseDate={expense.expenseDate}
+                    />
+                ))}
+            </tbody>
+        </table>
+    );
 };
 
 ExpenseList.defaultProps = {
@@ -13,24 +32,3 @@ ExpenseList.defaultProps = {
 };
 
 export default ExpenseList;
-
-{
-    /* <table className="table">
-                <thead>
-                    <th>Date</th>
-                    <th>Amount</th>
-                    <th>Vendor</th>
-                    <th>Type</th>
-                </thead>
-                <tbody>
-                    {props.expenses.map((expense) => (
-                        <Expense
-                            expenseType={props.expenseType}
-                            vendor={props.vendor}
-                            dollarAmount={props.dollarAmount}
-                            expenseDate={props.expenseDate}
-                        />
-                    ))}
-                </tbody>
-            </table> */
-}
