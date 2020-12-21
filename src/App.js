@@ -6,16 +6,47 @@ import ExpenseList from "./components/ExpenseList";
 import Navbar from "./components/Navbar/Navbar";
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            inputText: null,
-            dollarAmount: null,
-            vendor: null,
-            expenseType: null,
-            expenseDate: null,
-            expenses: null,
-        };
+    state = {
+        inputText: null,
+        dollarAmount: null,
+        vendor: null,
+        expenseType: null,
+        expenseDate: null,
+        expenses: [null],
+    };
+
+    componentDidMount() {
+        console.log("Component did mount/render");
+        this.setState({ inputText: "booger" });
+        // this.setState({
+        //     inputText: "booger"
+        //     dollarAmount: "10"
+        //     vendor: "Target"
+        //     expenseType: "Credit"
+        //     expenseDate: "12/20/2020"
+        //     expenses: [],
+        // });
+    }
+
+    renderContent() {
+        if (!this.state.err) {
+            console.log("we are error free! Render away");
+            return (
+                (
+                    <Form
+                        dollarAmount={this.state.dollarAmount}
+                        vendor={this.state.vendor}
+                        expenseType={this.state.expenseType}
+                        expenseDate={this.state.expenseDate}
+                        inputText={this.state.inputText}
+                        expenses={this.state.expenses}
+                    />
+                ),
+                (<ExpenseList expenses={this.state.expenses} />)
+            );
+        } else {
+            console.log("The error is...." + this.state.err);
+        }
     }
 
     render() {
@@ -25,31 +56,10 @@ class App extends React.Component {
                 <header>
                     <h1 className="display-5">Expense Tracker</h1>
                 </header>
-                <Form
-                    dollarAmount={dollarAmount}
-                    vendor={vendor}
-                    expenseType={expenseType}
-                    expenseDate={expenseDate}
-                    inputText={inputText}
-                    expenses={expenses}
-                    setDollarAmount={setDollarAmount}
-                    setVendor={setVendor}
-                    setExpenseType={setExpenseType}
-                    setExpenseDate={setExpenseDate}
-                    setInputText={setInputText}
-                    setExpenses={setExpenses}
-                />
-                <ExpenseList expenses={expenses} />
+
+                {this.renderContent()}
             </div>
         );
     }
 }
-
 export default App;
-
-// const [inputText, setInputText] = useState("");
-// const [dollarAmount, setDollarAmount] = useState(0);
-// const [vendor, setVendor] = useState("");
-// const [expenseType, setExpenseType] = useState("none");
-// const [expenseDate, setExpenseDate] = useState("");
-// const [expenses, setExpenses] = useState([]);

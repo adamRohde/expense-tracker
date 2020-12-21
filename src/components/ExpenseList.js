@@ -1,26 +1,36 @@
+import React from "react";
+//import Expense from "./Expense";
 
-import React from 'react';
-import Expense from "./Expense";
+const ExpenseList = (props) => {
+    const expenses = props.expenses;
+    console.log(props);
+    console.log(expenses);
+    return <div className="expense-container">Hello</div>;
+};
 
-const ExpenseList = ({ expenses }) => {
-   // console.log(expenses); 
-    return(    
-        <div className="expense-container">
-            <table className="table">
+ExpenseList.defaultProps = {
+    expenses: ["12/20/2020", "Target", "123", "Credit"],
+};
+
+export default ExpenseList;
+
+{
+    /* <table className="table">
                 <thead>
                     <th>Date</th>
                     <th>Amount</th>
                     <th>Vendor</th>
                     <th>Type</th>
-                </thead>   
+                </thead>
                 <tbody>
-                        {/* <th scope="row">1</th> */}
-                        {expenses.map(expense => (
-                            <Expense expenseType={expense.expenseType} vendor={expense.vendor} dollarAmount={expense.dollarAmount} expenseDate={expense.expenseDate} />
-                        ))}
+                    {props.expenses.map((expense) => (
+                        <Expense
+                            expenseType={props.expenseType}
+                            vendor={props.vendor}
+                            dollarAmount={props.dollarAmount}
+                            expenseDate={props.expenseDate}
+                        />
+                    ))}
                 </tbody>
-            </table>
-        </div>
-    )
+            </table> */
 }
-export default ExpenseList;  
