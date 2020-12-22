@@ -1,6 +1,17 @@
 import React from "react";
 
-const Form = (props) => {
+const Form = ({
+    expenses,
+    setExpenses,
+    expenseType,
+    setExpenseType,
+    vendor,
+    setVendor,
+    expenseDate,
+    setExpenseDate,
+    dollarAmount,
+    setDollarAmount,
+}) => {
     const inputStyle = {
         color: "blue",
         width: "35vh",
@@ -10,36 +21,36 @@ const Form = (props) => {
 
     //Expense Type
     const selectExpenseTypeHandler = (e) => {
-        props.setExpenseType(e.target.value);
+        setExpenseType(e.target.value);
     };
     //Vendor
     const inputVendorHandler = (e) => {
-        props.setVendor(e.target.value);
+        setVendor(e.target.value);
     };
     //Expense Date
     const inputExpenseDateHandler = (e) => {
-        props.setExpenseDate(e.target.value);
+        setExpenseDate(e.target.value);
     };
     //Dollar Amount
     const inputDollarAmountHandler = (e) => {
-        props.setDollarAmount(e.target.value);
+        setDollarAmount(e.target.value);
     };
 
     const submitExpenseHandler = (e) => {
         e.preventDefault();
         console.log("Submitting my expenses");
 
-        if (props.dollarAmount == "") {
+        if (dollarAmount == "") {
             alert("Please add a dollar amount");
             console.log("No money");
         } else {
-            props.setExpenses([
-                ...props.expenses,
+            setExpenses([
+                ...expenses,
                 {
-                    expenseType: props.expenseType,
-                    vendor: props.vendor,
-                    expenseDate: props.expenseDate,
-                    dollarAmount: props.dollarAmount,
+                    expenseType: expenseType,
+                    vendor: vendor,
+                    expenseDate: expenseDate,
+                    dollarAmount: dollarAmount,
                     id: Math.random() * 1000,
                 },
             ]);
