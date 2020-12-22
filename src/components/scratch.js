@@ -37,3 +37,9 @@
 // }
 
 // export default ExpenseList;
+
+// const Form = ({ expenses, setExpenses,
+//     expenseType, setExpenseType,
+//     vendor, setVendor,
+//     expenseDate,  setExpenseDate,
+//     dollarAmount, setDollarAmount }) => {
