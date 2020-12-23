@@ -41,12 +41,9 @@
     color: var(--theme-color-text);
 }
 
-.dropDownMenu {
-    position: absolute;
-    margin-top: 130px;
-    margin-left: 30px;
-    background-color: white;
-    background: white;
+.dropdown {
+    margin-left: 1vh;
+    color: black;
 }
 
 .popup {

@@ -1,26 +1,21 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import Dropdown from "react-bootstrap/Dropdown";
 
-const getPopup = (menu) => {
-    if (menu <= 1) {
-        return " ";
-    } else {
-        return "none";
-    }
-};
-
-const Popup = (props) => {
-    console.log(props.dropDownMenu);
-    const popUpDisplay = getPopup(props.dropDownMenu);
-
+const Popup = () => {
     return (
-        <div className="dropDownMenu" style={{ display: popUpDisplay }}>
-            <ul>
-                {popUpDisplay}
-                <li>Settings</li>
-                <li>Home</li>
-                <li>Something Else</li>
-            </ul>
+        <div>
+            <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic" className="dropdown">
+                    Burger
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
         </div>
     );
 };
