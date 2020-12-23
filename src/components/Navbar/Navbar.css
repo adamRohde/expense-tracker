@@ -40,3 +40,15 @@
 .navbar label {
     color: var(--theme-color-text);
 }
+
+.dropDownMenu {
+    position: absolute;
+    margin-top: 130px;
+    margin-left: 30px;
+    background-color: white;
+    background: white;
+}
+
+.popup {
+    color: black;
+}
