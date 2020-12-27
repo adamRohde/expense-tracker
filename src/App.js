@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import "./CSS/App.css";
-//Importing Components
 import InputForm from "./components/InputForm";
 import ExpenseList from "./components/ExpenseList";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-    const [inputText, setInputText] = useState("");
+    // const [inputText, setInputText] = useState("");
     const [dollarAmount, setDollarAmount] = useState(0);
     const [vendor, setVendor] = useState("");
     const [expenseType, setExpenseType] = useState("none");
     const [expenseDate, setExpenseDate] = useState("");
     const [expenses, setExpenses] = useState([]);
+    const [removeButton, setRemoveButton] = useState([]);
     return (
         <div className="App">
             <Navbar />
@@ -25,14 +25,16 @@ function App() {
                 vendor={vendor}
                 expenseType={expenseType}
                 expenseDate={expenseDate}
-                inputText={inputText}
+                // inputText={inputText}
+                // removeButton={removeButton}
                 expenses={expenses}
                 setDollarAmount={setDollarAmount}
                 setVendor={setVendor}
                 setExpenseType={setExpenseType}
                 setExpenseDate={setExpenseDate}
-                setInputText={setInputText}
+                // setInputText={setInputText}
                 setExpenses={setExpenses}
+                // setRemoveButton={setRemoveButton}
             />
             <ExpenseList expenses={expenses} />
         </div>

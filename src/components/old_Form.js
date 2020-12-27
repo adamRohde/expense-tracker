@@ -102,11 +102,7 @@ const Form = ({
                     />
                 </div>
             </div>
-            <button
-                onClick={submitExpenseHandler}
-                className="btn btn-primary addExpense-button"
-                type="submit"
-            >
+            <button onClick={submitExpenseHandler} className="btn btn-primary addExpense-button" type="submit">
                 <i>Add Expense</i>
             </button>
         </form>
@@ -114,3 +110,53 @@ const Form = ({
 };
 
 export default Form;
+
+<Form onSubmit={submitExpenseHandler}>
+    <div className="form-row">
+        <div className="form-leftColumn">
+            {/* ------------------------------------------------- Type ------------------------------------------------- */}
+            <select onChange={selectExpenseTypeHandler} className="input-expense form-select" style={inputStyle}>
+                <option value="none">None</option>
+                <option value="credit">Credit</option>
+                <option value="debit">Debit</option>
+                <option value="cash">Cash</option>
+            </select>
+        </div>
+        <div className="form-rightColumn">
+            {/* ------------------------------------------------- Vendor ------------------------------------------------- */}
+            <input
+                onChange={inputVendorHandler}
+                className="form-control input-expense form-control"
+                placeholder="Vendor"
+                style={inputStyle}
+                required
+            />
+        </div>
+    </div>
+    <div className="form-row">
+        <div className="form-leftColumn">
+            {/* ------------------------------------------------- Date ------------------------------------------------- */}
+            <input
+                type="date"
+                onChange={inputExpenseDateHandler}
+                className="input-expense form-control"
+                style={inputStyle}
+                required
+            />
+        </div>
+        <div className="form-rightColumn">
+            {/* ------------------------------------------------- Dollar Amount ------------------------------------------------- */}
+            <input
+                type="number"
+                onChange={inputDollarAmountHandler}
+                className="input-expense form-control"
+                placeholder="Dollar Amount"
+                style={inputStyle}
+                required
+            />
+        </div>
+    </div>
+    <button className="btn btn-primary addExpense-button" type="submit">
+        <i>Add Expense</i>
+    </button>
+</Form>;

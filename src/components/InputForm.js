@@ -2,15 +2,6 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 
 const InputForm = (props) => {
-    //const [newExpense, setNewExpense] = useState([]);
-
-    const inputStyle = {
-        color: "blue",
-        width: "35vh",
-        height: "7vh",
-        border: "1px darkgrey solid",
-    };
-
     //Expense Type
     const selectExpenseTypeHandler = (e) => {
         props.setExpenseType(e.target.value);
@@ -30,77 +21,63 @@ const InputForm = (props) => {
 
     const submitExpenseHandler = (e) => {
         e.preventDefault();
-        console.log("Submitting my expenses");
 
-        if (props.dollarAmount == "") {
-            alert("Please add a dollar amount");
-            console.log("No money");
-        } else {
-            props.setExpenses([
-                ...props.expenses,
-                {
-                    expenseType: props.expenseType,
-                    vendor: props.vendor,
-                    expenseDate: props.expenseDate,
-                    dollarAmount: props.dollarAmount,
-                    id: Math.random() * 1000,
-                },
-            ]);
-        }
+        props.setExpenses([
+            ...props.expenses,
+            {
+                expenseType: props.expenseType,
+                vendor: props.vendor,
+                expenseDate: props.expenseDate,
+                dollarAmount: props.dollarAmount,
+                id: Math.random() * 1000,
+            },
+        ]);
     };
 
     return (
-        <Form noValidate>
+        <Form onSubmit={submitExpenseHandler}>
             <div className="form-row">
-                <div className="form-leftColumn">
-                    <select
-                        onChange={selectExpenseTypeHandler}
-                        className="input-expense form-select"
-                        style={inputStyle}
-                    >
+                <Form.Group md="6">
+                    {/* ------------------------------------------------- Type ------------------------------------------------- */}
+                    <select onChange={selectExpenseTypeHandler} className="input-expense form-select">
                         <option value="none">None</option>
                         <option value="credit">Credit</option>
                         <option value="debit">Debit</option>
                         <option value="cash">Cash</option>
                     </select>
-                </div>
-                <div className="form-rightColumn">
+                </Form.Group>
+                <Form.Group md="6">
+                    {/* ------------------------------------------------- Vendor ------------------------------------------------- */}
                     <input
                         onChange={inputVendorHandler}
-                        name="vendor"
-                        className="form-control"
-                        // className="form-control input-expense form-control"
+                        className="input-expense form-control"
                         placeholder="Vendor"
-                        style={inputStyle}
                         required
                     />
-                </div>
+                </Form.Group>
             </div>
             <div className="form-row">
-                <div className="form-leftColumn">
+                <Form.Group md="6">
+                    {/* ------------------------------------------------- Date ------------------------------------------------- */}
                     <input
                         type="date"
                         onChange={inputExpenseDateHandler}
-                        name="date"
-                        // className="input-expense form-control"
-                        className="form-control"
-                        style={inputStyle}
+                        className="input-expense form-control"
                         required
                     />
-                </div>
-                <div className="form-rightColumn">
+                </Form.Group>
+                <Form.Group md="6">
+                    {/* ------------------------------------------------- Dollar Amount ------------------------------------------------- */}
                     <input
+                        type="number"
                         onChange={inputDollarAmountHandler}
-                        name="amount"
-                        // className="input-expense form-control"
-                        className="form-control"
+                        className="input-expense form-control"
                         placeholder="Dollar Amount"
-                        style={inputStyle}
                         required
                     />
-                </div>
+                </Form.Group>
             </div>
-            <button onClick={submitExpenseHandler} className="btn btn-primary addExpense-button" type="submit">
+            <button className="btn btn-primary addExpense-button" type="submit">
                 <i>Add Expense</i>
             </button>
         </Form>

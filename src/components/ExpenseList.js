@@ -12,6 +12,7 @@ const ExpenseList = (props) => {
                     <th>Amount</th>
                     <th>Vendor</th>
                     <th>Type</th>
+                    <th>Remove</th>
                 </thead>
                 <tbody>
                     {props.expenses.map((expense) => (
@@ -27,4 +28,5 @@ const ExpenseList = (props) => {
         </div>
     );
 };
+
 export default ExpenseList;
