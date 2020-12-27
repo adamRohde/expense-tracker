@@ -34,6 +34,7 @@ const InputForm = (props) => {
         ]);
     };
 
+    console.log(props.expenses);
     return (
         <Form onSubmit={submitExpenseHandler}>
             <div className="form-row">

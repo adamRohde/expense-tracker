@@ -1,17 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "react-bootstrap/Button";
 
-const Expense = (props) => {
-    console.log(props);
-
+const Expense = ({ expense, expenses, setExpenses }) => {
+    const deleteHandler = () => {
+        console.log("expense");
+        console.log(expenses);
+        setExpenses(expenses.filter((el) => el.id !== expense.id));
+    };
     return (
         <tr>
-            <td>{props.expenseDate}</td>
-            <td>${props.dollarAmount}</td>
-            <td>{props.vendor}</td>
-            <td>{props.expenseType}</td>
+            <td>{expense.expenseDate}</td>
+            <td>${expense.dollarAmount}</td>
+            <td>{expense.vendor}</td>
+            <td>{expense.expenseType}</td>
             <td>
-                <Button variant="danger">Remove</Button>{" "}
+                <Button onClick={deleteHandler} variant="danger">
+                    Remove
+                </Button>{" "}
             </td>
         </tr>
     );

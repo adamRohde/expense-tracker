@@ -11,7 +11,6 @@ function App() {
     const [expenseType, setExpenseType] = useState("none");
     const [expenseDate, setExpenseDate] = useState("");
     const [expenses, setExpenses] = useState([]);
-    const [removeButton, setRemoveButton] = useState([]);
     return (
         <div className="App">
             <Navbar />
@@ -25,18 +24,14 @@ function App() {
                 vendor={vendor}
                 expenseType={expenseType}
                 expenseDate={expenseDate}
-                // inputText={inputText}
-                // removeButton={removeButton}
                 expenses={expenses}
                 setDollarAmount={setDollarAmount}
                 setVendor={setVendor}
                 setExpenseType={setExpenseType}
                 setExpenseDate={setExpenseDate}
-                // setInputText={setInputText}
                 setExpenses={setExpenses}
-                // setRemoveButton={setRemoveButton}
             />
-            <ExpenseList expenses={expenses} />
+            <ExpenseList expenses={expenses} setExpenses={setExpenses} />
         </div>
     );
 }
