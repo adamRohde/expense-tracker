@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./CSS/App.css";
 //Importing Components
-import Form from "./components/Form";
+import InputForm from "./components/InputForm";
 import ExpenseList from "./components/ExpenseList";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -20,7 +20,7 @@ function App() {
                 <h1 className="display-5">Expense Tracker</h1>
             </header>
 
-            <Form
+            <InputForm
                 dollarAmount={dollarAmount}
                 vendor={vendor}
                 expenseType={expenseType}

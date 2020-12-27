@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
 
-const Form = (props) => {
+const InputForm = (props) => {
+    //const [newExpense, setNewExpense] = useState([]);
+
     const inputStyle = {
         color: "blue",
         width: "35vh",
@@ -47,7 +50,7 @@ const Form = (props) => {
     };
 
     return (
-        <form>
+        <Form noValidate>
             <div className="form-row">
                 <div className="form-leftColumn">
                     <select
@@ -64,10 +67,12 @@ const Form = (props) => {
                 <div className="form-rightColumn">
                     <input
                         onChange={inputVendorHandler}
-                        name="venodr"
-                        className="input-expense form-control"
-                        placeholder="Who?"
+                        name="vendor"
+                        className="form-control"
+                        // className="form-control input-expense form-control"
+                        placeholder="Vendor"
                         style={inputStyle}
+                        required
                     />
                 </div>
             </div>
@@ -77,29 +82,29 @@ const Form = (props) => {
                         type="date"
                         onChange={inputExpenseDateHandler}
                         name="date"
-                        className="input-expense form-control"
+                        // className="input-expense form-control"
+                        className="form-control"
                         style={inputStyle}
+                        required
                     />
                 </div>
                 <div className="form-rightColumn">
                     <input
                         onChange={inputDollarAmountHandler}
                         name="amount"
-                        className="input-expense form-control"
-                        placeholder="How much?"
+                        // className="input-expense form-control"
+                        className="form-control"
+                        placeholder="Dollar Amount"
                         style={inputStyle}
+                        required
                     />
                 </div>
             </div>
-            <button
-                onClick={submitExpenseHandler}
-                className="btn btn-primary addExpense-button"
-                type="submit"
-            >
+            <button onClick={submitExpenseHandler} className="btn btn-primary addExpense-button" type="submit">
                 <i>Add Expense</i>
             </button>
-        </form>
+        </Form>
     );
 };
 
-export default Form;
+export default InputForm;
