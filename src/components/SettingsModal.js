@@ -1,15 +1,18 @@
-import React, { useState } from "react";
-import { Modal, Button, Form, ButtonGroup, ToggleButton } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Modal, Button, ButtonGroup, ToggleButton } from "react-bootstrap";
 
 const SettingsModal = (props) => {
     const [radioValue, setRadioValue] = useState("1");
-    console.log("Settings Modal");
-    console.log(props);
 
     const radios = [
         { name: "Light Mode", value: "1" },
         { name: "Dark Mode", value: "2" },
     ];
+
+    useEffect(() => {
+        console.log("Use Effect - Modal");
+        props.setTheme(!props.theme);
+    }, [radioValue]);
 
     return (
         <Modal show={!props.show}>
@@ -26,7 +29,9 @@ const SettingsModal = (props) => {
                             variant="secondary"
                             name="radio"
                             value={radio.value}
+                            checked={true}
                             checked={radioValue === radio.value}
+                            // checked={props.theme}
                             onChange={(e) => setRadioValue(e.currentTarget.value)}
                         >
                             {radio.name}
