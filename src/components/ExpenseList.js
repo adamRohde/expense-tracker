@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Expense from "./Expense";
 
 const ExpenseList = (props) => {
-    console.log("ExpenseList");
-    console.log(props);
-
     return (
         <div className="expense-container">
             <table className="table">
@@ -17,7 +14,11 @@ const ExpenseList = (props) => {
                 </thead>
                 <tbody>
                     {props.expenses.map((expense) => (
-                        <Expense expense={expense} expenses={props.expenses} setExpenses={props.setExpenses} />
+                        <Expense 
+                            expense={expense} 
+                            expenses={props.expenses} 
+                            setExpenses={props.setExpenses} 
+                        />
                     ))}
                 </tbody>
             </table>

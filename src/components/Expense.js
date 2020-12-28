@@ -1,22 +1,21 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 
-const Expense = ({ expense, expenses, setExpenses }) => {
+const Expense = (props) => {
     const deleteHandler = () => {
-        console.log("expense");
-        console.log(expenses);
-        setExpenses(expenses.filter((el) => el.id !== expense.id));
+        props.setExpenses(props.expenses.filter((el) => el.id !== props.expense.id));
     };
+
     return (
         <tr>
-            <td>{expense.expenseDate}</td>
-            <td>${expense.dollarAmount}</td>
-            <td>{expense.vendor}</td>
-            <td>{expense.expenseType}</td>
+            <td>{props.expense.expenseDate}</td>
+            <td>${props.expense.dollarAmount}</td>
+            <td>{props.expense.vendor}</td>
+            <td>{props.expense.expenseType}</td>
             <td>
                 <Button onClick={deleteHandler} variant="danger">
-                    Remove
-                </Button>{" "}
+                    Delete
+                </Button>
             </td>
         </tr>
     );
