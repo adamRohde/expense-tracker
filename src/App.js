@@ -6,12 +6,18 @@ import Navbar from "./components/Navbar/Navbar";
 import Route from "./components/Route";
 import SettingsModal from "./components/SettingsModal";
 
+//let root = document.querySelector(":root");
+
+console.log("root");
+//console.log(root.style.setProperty);
+
 function App() {
     const [dollarAmount, setDollarAmount] = useState(0);
     const [vendor, setVendor] = useState("");
     const [expenseType, setExpenseType] = useState("none");
     const [expenseDate, setExpenseDate] = useState("");
     const [expenses, setExpenses] = useState([]);
+    const [theme, setTheme] = useState([]);
 
     const [show, setShow] = useState(false);
 
@@ -22,7 +28,6 @@ function App() {
                 <header>
                     <h1 className="display-5">Expense Tracker</h1>
                 </header>
-
                 <InputForm
                     dollarAmount={dollarAmount}
                     vendor={vendor}
@@ -40,7 +45,7 @@ function App() {
 
             <Route path="/settings">
                 <Navbar />
-                <SettingsModal show={show} setShow={setShow} />
+                <SettingsModal show={show} setShow={setShow} theme={theme} setTheme={setTheme} />
             </Route>
         </div>
     );

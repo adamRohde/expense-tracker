@@ -1,8 +1,6 @@
 :root {
-    --theme-color-nav: rgb(213, 213, 213);
-    --theme-color-back: rgb(255, 255, 255);
+    --theme-color-nav: rgb(90, 72, 72);
     --theme-color-keys: rgb(191, 191, 191);
-    --theme-color-keys-secondary: rgb(191, 191, 191);
     --theme-color-text: rgb(0, 0, 0);
     --theme-color-burger: rgb(64, 64, 64);
 }

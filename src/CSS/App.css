@@ -1,10 +1,6 @@
 :root {
-    --theme-color-nav: rgb(213, 213, 213);
     --theme-color-back: rgb(255, 255, 255);
-    --theme-color-keys: rgb(191, 191, 191);
     --theme-color-keys-secondary: rgb(191, 191, 191);
-    --theme-color-text: rgb(0, 0, 0);
-    --theme-color-burger: rgb(64, 64, 64);
 }
 
 * {
@@ -13,11 +9,17 @@
     box-sizing: border-box;
 }
 body {
-    background-image: linear-gradient(120deg, #cccccc 0%, #998686 100%);
+    background-image: linear-gradient(
+        120deg,
+        var(--theme-color-keys-secondary) 0%,
+        var(--theme-color-keys-secondary) 100%
+    );
+    /* background-image: linear-gradient(120deg, #cccccc 0%, #998686 100%); */
     color: rgb(122, 89, 89);
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
 }
+
 header {
     margin-top: 2em;
 }
