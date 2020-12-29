@@ -2,6 +2,14 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 
 const InputForm = (props) => {
+    const getTodaysDate = () => {
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, "0");
+        let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+        let yyyy = today.getFullYear();
+        return yyyy + "-" + mm + "-" + dd;
+    };
+
     //Expense Type
     const selectExpenseTypeHandler = (e) => {
         props.setExpenseType(e.target.value);
@@ -22,16 +30,22 @@ const InputForm = (props) => {
     const submitExpenseHandler = (e) => {
         e.preventDefault();
 
-        props.setExpenses([
-            ...props.expenses,
-            {
-                expenseType: props.expenseType,
-                vendor: props.vendor,
-                expenseDate: props.expenseDate,
-                dollarAmount: props.dollarAmount,
-                id: Math.random() * 1000,
-            },
-        ]);
+        if (props.expenseDate === "") {
+            props.setExpenseDate(getTodaysDate);
+            console.log(getTodaysDate);
+            console.log("booger");
+        } else {
+            props.setExpenses([
+                ...props.expenses,
+                {
+                    expenseType: props.expenseType,
+                    vendor: props.vendor,
+                    expenseDate: props.expenseDate,
+                    dollarAmount: props.dollarAmount,
+                    id: Math.random() * 1000,
+                },
+            ]);
+        }
     };
 
     return (
@@ -61,9 +75,9 @@ const InputForm = (props) => {
                     {/* ------------------------------------------------- Date ------------------------------------------------- */}
                     <input
                         type="date"
+                        value={"booger"}
                         onChange={inputExpenseDateHandler}
                         className="input-expense form-control"
-                        required
                     />
                 </Form.Group>
                 <Form.Group md="6">
