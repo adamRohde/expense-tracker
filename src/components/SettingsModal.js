@@ -33,7 +33,7 @@ const SettingsModal = (props) => {
                         <ToggleButton
                             key={idx}
                             type="radio"
-                            variant="secondary"
+                            // variant="secondary"
                             name="radio"
                             value={radio.value}
                             checked={radioValue === radio.value}

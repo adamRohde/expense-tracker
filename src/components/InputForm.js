@@ -77,7 +77,7 @@ const InputForm = (props) => {
                     />
                 </Form.Group>
             </div>
-            <button className="btn-primary addExpense-button myButtons" type="submit">
+            <button className="btn addExpense-button myButtons" type="submit">
                 <i>Add Expense</i>
             </button>
         </Form>

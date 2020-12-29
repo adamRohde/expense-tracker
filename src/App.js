@@ -22,26 +22,34 @@ function App() {
     useEffect(() => {
         if (theme) {
             //Dark Mode
-            root.style.setProperty("--theme-color-nav", "#121212");
-            root.style.setProperty("--app-theme-color-text", "#ffffff");
-            root.style.setProperty("--app-theme-color-back", "rgb(59, 52, 52)");
-            root.style.setProperty("--app-theme-color-back-secondary", "rgb(86, 86, 86)");
-
-            root.style.setProperty("--app-theme-color-table-row-1", "rgb(119, 119, 119)");
-            root.style.setProperty("--app-theme-color-table-row-2", "rgb(224, 126, 29)");
+            //Nav
+            root.style.setProperty("--theme-color-nav", "#3700b3");
             root.style.setProperty("--theme-color-nav-text", "#ffffff");
-            root.style.setProperty("--app-theme-color-table-button", "#ff0000");
+            //Text
+            root.style.setProperty("--app-theme-color-text", "#ffffff");
+            //Gradient Background
+            root.style.setProperty("--app-theme-color-back", "#121212");
+            root.style.setProperty("--app-theme-color-back-secondary", "#121212");
+            //Table
+            root.style.setProperty("--app-theme-color-table-row-1", "#ababab");
+            root.style.setProperty("--app-theme-color-table-row-2", "#2d2d2d");
+            //Buttons
+            root.style.setProperty("--app-theme-color-table-button", "#3700b3");
         } else {
             //Light Mode
-            root.style.setProperty("--theme-color-nav", "#b2b2b2");
-            root.style.setProperty("--app-theme-color-text", "#3f3f3f");
-            root.style.setProperty("--app-theme-color-back", "rgb(255, 221, 185)");
-            root.style.setProperty("--app-theme-color-back-secondary", "rgb(255, 221, 185)");
-
-            root.style.setProperty("--app-theme-color-table-row-1", "#d3d3d3");
-            root.style.setProperty("--app-theme-color-table-row-2", "#b2b2b2");
+            //Nav
+            root.style.setProperty("--theme-color-nav", "#96151D");
             root.style.setProperty("--theme-color-nav-text", "#000000");
-            root.style.setProperty("--app-theme-color-table-button", "#000cff");
+            //Text
+            root.style.setProperty("--app-theme-color-text", "#3f3f3f");
+            //Gradient Background
+            root.style.setProperty("--app-theme-color-back", "#ededed");
+            root.style.setProperty("--app-theme-color-back-secondary", "#ededed");
+            //Table
+            root.style.setProperty("--app-theme-color-table-row-1", "#EAEAEA");
+            root.style.setProperty("--app-theme-color-table-row-2", "#F9FAFA");
+            //Buttons
+            root.style.setProperty("--app-theme-color-table-button", "#22A1DB");
         }
     }, [theme]);
 

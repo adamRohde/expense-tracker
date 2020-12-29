@@ -132,6 +132,10 @@ tr:nth-child(even) {
     background: var(--app-theme-color-table-button);
 }
 
+.myButtons:hover {
+    background: var(--app-theme-color-table-button);
+}
+
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
