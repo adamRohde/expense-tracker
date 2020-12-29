@@ -3,17 +3,21 @@ import "./Navbar.css";
 import Dropdown from "react-bootstrap/Dropdown";
 
 const Popup = (props) => {
-    console.log("from the popup");
-    console.log(props);
+    const showModalHandler = () => {
+        console.log("settings clicked");
+        props.setShow(true);
+    };
 
     return (
         <div>
             <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic" className="dropdown">
+                <Dropdown.Toggle id="dropdown-basic" className="dropdown">
                     Settings
                 </Dropdown.Toggle>
-                <Dropdown.Menu>
-                    <Dropdown.Item href="/settings">Settings</Dropdown.Item>
+                <Dropdown.Menu className="dropdownMenu">
+                    <Dropdown.Item className="drowndown-item" onClick={showModalHandler}>
+                        Settings
+                    </Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
         </div>

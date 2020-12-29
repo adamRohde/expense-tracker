@@ -13,7 +13,7 @@ const Expense = (props) => {
             <td>{props.expense.vendor}</td>
             <td>{props.expense.expenseType}</td>
             <td>
-                <Button onClick={deleteHandler} variant="danger">
+                <Button className="myButtons" onClick={deleteHandler}>
                     Delete
                 </Button>
             </td>

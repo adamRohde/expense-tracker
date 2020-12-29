@@ -1,7 +1,7 @@
 :root {
-    --theme-color-nav: rgb(211, 15, 15);
+    --theme-color-nav: null;
     --theme-color-keys: rgb(191, 191, 191);
-    --theme-color-text: rgb(0, 0, 0);
+    --theme-color-nav-text: null;
     --theme-color-burger: rgb(64, 64, 64);
 }
 
@@ -41,7 +41,11 @@
 
 .dropdown {
     margin-left: 1vh;
-    color: black;
+    color: var(--theme-color-nav-text);
+}
+
+.drowndown-item {
+    color: var(--theme-color-nav-text);
 }
 
 .popup {

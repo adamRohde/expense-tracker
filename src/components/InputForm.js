@@ -34,7 +34,6 @@ const InputForm = (props) => {
         ]);
     };
 
-    console.log(props.expenses);
     return (
         <Form onSubmit={submitExpenseHandler}>
             <div className="form-row">
@@ -78,7 +77,7 @@ const InputForm = (props) => {
                     />
                 </Form.Group>
             </div>
-            <button className="btn btn-primary addExpense-button" type="submit">
+            <button className="btn-primary addExpense-button myButtons" type="submit">
                 <i>Add Expense</i>
             </button>
         </Form>

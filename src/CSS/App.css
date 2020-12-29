@@ -1,9 +1,18 @@
 :root {
-    /* --app-theme-color-back: rgb(255, 255, 255);
-    --app-theme-color-keys-secondary: rgb(191, 191, 191); */
+    --app-theme-color-back: null;
+    --app-theme-color-back-secondary: null;
+    --app-theme-color-text: null;
+    --app-theme-color-table-row-1: null;
+    --app-theme-color-table-row-2: null;
+    --app-theme-color-table-button: null;
+}
 
-    --app-theme-color-back: rgb(19, 13, 13);
-    --app-theme-color-keys-secondary: rgb(204, 204, 204);
+.App {
+    background-image: linear-gradient(
+        120deg,
+        var(--app-theme-color-back) 0%,
+        var(--app-theme-color-back-secondary) 100%
+    );
 }
 
 * {
@@ -14,8 +23,8 @@
 body {
     background-image: linear-gradient(
         120deg,
-        var(-app-theme-color-keys-secondary) 0%,
-        var(-app-theme-color-keys-secondary) 100%
+        var(--app-theme-color-back) 0%,
+        var(--app-theme-color-back-secondary) 100%
     );
     /* background-image: linear-gradient(120deg, #cccccc 0%, #998686 100%); */
     color: rgb(121, 121, 121);
@@ -28,7 +37,7 @@ header {
 }
 
 h1 {
-    color: black;
+    color: var(--app-theme-color-text);
 }
 
 header {
@@ -86,38 +95,41 @@ form button:hover {
 
 .table {
     width: 20vh;
+    color: var(--app-theme-color-text);
 }
 /* need */
 th {
     min-width: 20vh;
     place-self: center;
     text-align: center;
-    border-bottom: black 1px solid;
+    border-bottom: var(--app-theme-color-text) 1px solid;
     padding-bottom: 0.5em;
 }
 
-/* need */
 td {
     place-self: center;
     background-color: rgb(255, 255, 255);
     text-align: center;
 }
 
-/* The only thing this does is makes the header lightblue....not really working as expected */
 tr:nth-child(odd) {
-    background-color: rgb(216, 216, 216);
+    background-color: var(--app-theme-color-table-row-1);
 }
 tr:nth-child(even) {
-    background-color: #f3f3f3;
+    background-color: var(--app-theme-color-table-row-2);
 }
 
-/* need */
 .input-expense {
     margin: 1em;
     width: 25vh;
     font-size: 1rem;
     display: flex;
     padding: 1rem;
+}
+
+.myButtons {
+    color: white;
+    background: var(--app-theme-color-table-button);
 }
 
 select {
