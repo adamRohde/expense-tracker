@@ -19,7 +19,9 @@ function App() {
     const [storage, setStorage] = useState("0");
     const [updateStorage, setUpdateStorage] = useState(false);
 
-    let independentExpenses;
+    let myVar;
+    myVar = expenses;
+    // myVar = "Hello";
 
     useEffect(() => {
         if (theme) {
@@ -57,13 +59,9 @@ function App() {
         }
     }, [theme]);
 
-    const getExpenses = () => {
-        return expenses();
-    };
-
     return (
         <div className="App">
-            <LocalStorage updateStorage={updateStorage} expenses={expenses} />
+            <LocalStorage updateStorage={updateStorage} expenses={expenses} setExpenses={setExpenses} />
             <Navbar show={show} setShow={setShow} />
             <header>
                 <h1 className="display-5">Expense Tracker</h1>
@@ -84,7 +82,7 @@ function App() {
                 updateStorage={updateStorage}
                 setUpdateStorage={setUpdateStorage}
             />
-            <ExpenseList expenses={expenses} setExpenses={setExpenses} />
+            {/* <ExpenseList expenses={expenses} setExpenses={setExpenses} /> */}
 
             <SettingsModal
                 show={show}
