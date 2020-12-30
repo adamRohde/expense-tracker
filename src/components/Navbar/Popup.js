@@ -11,10 +11,15 @@ const Popup = (props) => {
     return (
         <div>
             <Dropdown>
-                <Dropdown.Toggle id="dropdown-basic" className="dropdown">
-                    Settings
+                <Dropdown.Toggle bsPrefix="burger" variant="link">
+                    <div className="burger">
+                        <div className="burger-line"></div>
+                        <div className="burger-line"></div>
+                        <div className="burger-line"></div>
+                    </div>
                 </Dropdown.Toggle>
-                <Dropdown.Menu className="dropdownMenu">
+
+                <Dropdown.Menu>
                     <Dropdown.Item className="drowndown-item" onClick={showModalHandler}>
                         Settings
                     </Dropdown.Item>

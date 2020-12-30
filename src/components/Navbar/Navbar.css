@@ -1,53 +1,38 @@
 :root {
-    --theme-color-nav: null;
-    --theme-color-keys: rgb(191, 191, 191);
-    --theme-color-nav-text: null;
-    --theme-color-burger: rgb(64, 64, 64);
+    --theme-color-navbar: null;
+    --theme-color-navbar-text: null;
+    --theme-color-navbar-burger: rgb(64, 64, 64);
 }
 
 .navbar {
-    background: var(--theme-color-nav);
+    background: var(--theme-color-navbar);
     height: auto;
 }
 
 .navbar .btn {
-    background: var(--theme-color-nav);
+    background: var(--theme-color-navbar);
 }
 
 .navbar .burger-line {
     width: 2em;
     height: 0.2em;
-    background-color: var(--theme-color-burger);
     margin: 0.25em;
     border-radius: 0.2em;
 }
 
 .burger {
-    margin-left: 1em;
+    margin-left: 0em;
 }
 
-.navbar div {
-    background-color: var(--theme-color-nav);
-    color: var(--theme-color-text);
-}
-
-.navbar input {
-    color: var(--theme-color-text);
-}
-
-.navbar label {
-    color: var(--theme-color-text);
-}
-
-.dropdown {
-    margin-left: 1vh;
-    color: var(--theme-color-nav-text);
+.burger > .burger-line {
+    background-color: var(--theme-color-navbar-burger);
 }
 
 .drowndown-item {
     color: var(--theme-color-nav-text);
 }
 
-.popup {
+.radiobuttons {
     color: black;
+    text-decoration: none;
 }

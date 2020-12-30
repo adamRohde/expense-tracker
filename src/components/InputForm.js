@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Form from "react-bootstrap/Form";
 
 const InputForm = (props) => {
@@ -9,6 +9,10 @@ const InputForm = (props) => {
         let yyyy = today.getFullYear();
         return yyyy + "-" + mm + "-" + dd;
     };
+
+    useEffect(() => {
+        console.log("Saving storage from form");
+    }, [props.storage]);
 
     //Expense Type
     const selectExpenseTypeHandler = (e) => {
@@ -32,8 +36,6 @@ const InputForm = (props) => {
 
         if (props.expenseDate === "") {
             props.setExpenseDate(getTodaysDate);
-            console.log(getTodaysDate);
-            console.log("booger");
         } else {
             props.setExpenses([
                 ...props.expenses,

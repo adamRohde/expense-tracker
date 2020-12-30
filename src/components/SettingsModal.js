@@ -8,44 +8,69 @@ const SettingsModal = (props) => {
         { name: "Light Mode", value: "0" },
         { name: "Dark Mode", value: "1" },
     ];
+    const localstorage = [
+        { name: "Save Expenses", value: "0" },
+        { name: "No Save", value: "1" },
+    ];
 
     useEffect(() => {
         props.setTheme(!props.theme);
     }, [radioValue]);
 
-    function modalOnChange(e) {
+    function themeChange(e) {
         setRadioValue(e.currentTarget.value);
-        console.log("modal changed");
-        console.log("theme " + props.theme);
-        console.log("radio value " + radioValue);
-        console.log("show value " + props.show);
     }
+
+    function storageChange(e) {
+        props.setStorage(e.currentTarget.value);
+    }
+
+    const handleClose = () => props.setShow(false);
 
     return (
         <Modal show={props.show}>
             <Modal.Header>
                 <Modal.Title>Settings</Modal.Title>
             </Modal.Header>
-            <Modal.Body>App Settings</Modal.Body>
-            <Modal.Footer>
-                <ButtonGroup toggle>
+            <Modal.Body>
+                <ButtonGroup>
                     {radios.map((radio, idx) => (
                         <ToggleButton
+                            className="radiobuttons"
+                            variant="link"
                             key={idx}
                             type="radio"
-                            // variant="secondary"
                             name="radio"
                             value={radio.value}
                             checked={radioValue === radio.value}
-                            onChange={modalOnChange}
+                            onChange={themeChange}
                         >
                             {radio.name}
                         </ToggleButton>
                     ))}
                 </ButtonGroup>
-
-                <Button variant="primary" onClick={() => props.setShow(!props.show)}>
-                    Save Changes
+                <div>
+                    <ButtonGroup>
+                        {localstorage.map((store, idx) => (
+                            <ToggleButton
+                                className="radiobuttons"
+                                variant="link"
+                                key={idx}
+                                type="radio"
+                                name="storage"
+                                value={store.value}
+                                checked={props.storage === store.value}
+                                onChange={storageChange}
+                            >
+                                {store.name}
+                            </ToggleButton>
+                        ))}
+                    </ButtonGroup>
+                </div>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="primary" onClick={handleClose}>
+                    Close
                 </Button>
             </Modal.Footer>
         </Modal>
