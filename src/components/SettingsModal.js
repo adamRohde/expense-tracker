@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button, ButtonGroup, ToggleButton } from "react-bootstrap";
 
-const SettingsModal = (props) => {
+const SettingsModal = ({ show, setShow, theme, setTheme, storage, setStorage }) => {
     const [radioValue, setRadioValue] = useState("0");
 
     const radios = [
@@ -14,7 +14,7 @@ const SettingsModal = (props) => {
     ];
 
     useEffect(() => {
-        props.setTheme(!props.theme);
+        setTheme(!theme);
     }, [radioValue]);
 
     function themeChange(e) {
@@ -22,13 +22,13 @@ const SettingsModal = (props) => {
     }
 
     function storageChange(e) {
-        props.setStorage(e.currentTarget.value);
+        setStorage(e.currentTarget.value);
     }
 
-    const handleClose = () => props.setShow(false);
+    const handleClose = () => setShow(false);
 
     return (
-        <Modal show={props.show}>
+        <Modal show={show}>
             <Modal.Header>
                 <Modal.Title>Settings</Modal.Title>
             </Modal.Header>
@@ -59,7 +59,7 @@ const SettingsModal = (props) => {
                                 type="radio"
                                 name="storage"
                                 value={store.value}
-                                checked={props.storage === store.value}
+                                checked={storage === store.value}
                                 onChange={storageChange}
                             >
                                 {store.name}

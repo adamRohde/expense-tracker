@@ -4,7 +4,7 @@ import Expense from "./Expense";
 const ExpenseList = (props) => {
     return (
         <div className="expense-container">
-            <table className="table">
+            <table className="table" id="expense-table">
                 <thead>
                     <th>Date</th>
                     <th>Amount</th>
@@ -14,11 +14,7 @@ const ExpenseList = (props) => {
                 </thead>
                 <tbody>
                     {props.expenses.map((expense) => (
-                        <Expense 
-                            expense={expense} 
-                            expenses={props.expenses} 
-                            setExpenses={props.setExpenses} 
-                        />
+                        <Expense expense={expense} expenses={props.expenses} setExpenses={props.setExpenses} />
                     ))}
                 </tbody>
             </table>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Form from "react-bootstrap/Form";
 
 const InputForm = (props) => {
@@ -9,10 +9,6 @@ const InputForm = (props) => {
         let yyyy = today.getFullYear();
         return yyyy + "-" + mm + "-" + dd;
     };
-
-    useEffect(() => {
-        console.log("Saving storage from form");
-    }, [props.storage]);
 
     //Expense Type
     const selectExpenseTypeHandler = (e) => {
@@ -37,6 +33,7 @@ const InputForm = (props) => {
         if (props.expenseDate === "") {
             props.setExpenseDate(getTodaysDate);
         } else {
+            props.setUpdateStorage(!props.updateStorage);
             props.setExpenses([
                 ...props.expenses,
                 {
@@ -75,12 +72,7 @@ const InputForm = (props) => {
             <div className="form-row">
                 <Form.Group md="6">
                     {/* ------------------------------------------------- Date ------------------------------------------------- */}
-                    <input
-                        type="date"
-                        value={"booger"}
-                        onChange={inputExpenseDateHandler}
-                        className="input-expense form-control"
-                    />
+                    <input type="date" onChange={inputExpenseDateHandler} className="input-expense form-control" />
                 </Form.Group>
                 <Form.Group md="6">
                     {/* ------------------------------------------------- Dollar Amount ------------------------------------------------- */}

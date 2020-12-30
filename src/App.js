@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./CSS/App.css";
+import LocalStorage from "./components/Localstorage";
 import InputForm from "./components/InputForm";
 import ExpenseList from "./components/ExpenseList";
 import Navbar from "./components/Navbar/Navbar";
@@ -16,6 +17,9 @@ function App() {
     const [theme, setTheme] = useState(true);
     const [show, setShow] = useState(false);
     const [storage, setStorage] = useState("0");
+    const [updateStorage, setUpdateStorage] = useState(false);
+
+    let independentExpenses;
 
     useEffect(() => {
         if (theme) {
@@ -53,12 +57,13 @@ function App() {
         }
     }, [theme]);
 
-    useEffect(() => {
-        console.log("We will save local storage");
-    }, [storage]);
+    const getExpenses = () => {
+        return expenses();
+    };
 
     return (
         <div className="App">
+            <LocalStorage updateStorage={updateStorage} expenses={expenses} />
             <Navbar show={show} setShow={setShow} />
             <header>
                 <h1 className="display-5">Expense Tracker</h1>
@@ -76,6 +81,8 @@ function App() {
                 setExpenses={setExpenses}
                 storage={storage}
                 setStorage={setStorage}
+                updateStorage={updateStorage}
+                setUpdateStorage={setUpdateStorage}
             />
             <ExpenseList expenses={expenses} setExpenses={setExpenses} />
 

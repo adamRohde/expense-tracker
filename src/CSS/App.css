@@ -113,9 +113,12 @@ td {
 }
 
 tr:nth-child(odd) {
+    font-style: italic;
     background-color: var(--app-theme-color-table-row-1);
 }
 tr:nth-child(even) {
+    font-style: italic;
+
     background-color: var(--app-theme-color-table-row-2);
 }
 
