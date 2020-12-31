@@ -37,20 +37,19 @@ const InputForm = (props) => {
     const submitExpenseHandler = (e) => {
         e.preventDefault();
 
-        if (props.expenseDate === "") {
-            props.setExpenseDate(getTodaysDate);
-        } else {
-            props.setExpenses([
-                ...props.expenses,
-                {
-                    expenseType: expenseType,
-                    vendor: vendor,
-                    expenseDate: expenseDate,
-                    dollarAmount: dollarAmount,
-                    id: Math.random() * 1000,
-                },
-            ]);
+        if (expenseDate === "") {
+            setExpenseDate(getTodaysDate);
         }
+        props.setExpenses([
+            ...props.expenses,
+            {
+                expenseType: expenseType,
+                vendor: vendor,
+                expenseDate: expenseDate,
+                dollarAmount: dollarAmount,
+                id: Math.random() * 1000,
+            },
+        ]);
     };
 
     return (

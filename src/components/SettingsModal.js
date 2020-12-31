@@ -11,15 +11,6 @@ const SettingsModal = ({ show, setShow, theme, setTheme, saveLocalStorage, setSa
         { name: "No Save", value: "1" },
     ];
 
-    // useEffect(() => {
-    //     if (saveLocalStorage == "0") {
-    //         console.log("Save local storage");
-    //     }
-    // });
-
-    console.log("Theme values: " + "theme=" + theme + " " + "themeValue.value=" + themeValues.value);
-    console.log("Theme values: " + "theme=" + theme + " " + "themeValue.value=" + themeValues.value);
-
     function themeChange(e) {
         setTheme(e.currentTarget.value);
     }
