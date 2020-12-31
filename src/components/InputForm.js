@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "../CSS/App.css";
 import Form from "react-bootstrap/Form";
 import ExpenseList from "../components/ExpenseList";
 
 const InputForm = (props) => {
+    const [dollarAmount, setDollarAmount] = useState(0);
+    const [vendor, setVendor] = useState("");
+    const [expenseType, setExpenseType] = useState("none");
+    const [expenseDate, setExpenseDate] = useState("");
+
     const getTodaysDate = () => {
         let today = new Date();
         let dd = String(today.getDate()).padStart(2, "0");
@@ -14,19 +19,19 @@ const InputForm = (props) => {
 
     //Expense Type
     const selectExpenseTypeHandler = (e) => {
-        props.setExpenseType(e.target.value);
+        setExpenseType(e.target.value);
     };
     //Vendor
     const inputVendorHandler = (e) => {
-        props.setVendor(e.target.value);
+        setVendor(e.target.value);
     };
     //Expense Date
     const inputExpenseDateHandler = (e) => {
-        props.setExpenseDate(e.target.value);
+        setExpenseDate(e.target.value);
     };
     //Dollar Amount
     const inputDollarAmountHandler = (e) => {
-        props.setDollarAmount(e.target.value);
+        setDollarAmount(e.target.value);
     };
 
     const submitExpenseHandler = (e) => {
@@ -35,14 +40,13 @@ const InputForm = (props) => {
         if (props.expenseDate === "") {
             props.setExpenseDate(getTodaysDate);
         } else {
-            props.setUpdateStorage(!props.updateStorage);
             props.setExpenses([
                 ...props.expenses,
                 {
-                    expenseType: props.expenseType,
-                    vendor: props.vendor,
-                    expenseDate: props.expenseDate,
-                    dollarAmount: props.dollarAmount,
+                    expenseType: expenseType,
+                    vendor: vendor,
+                    expenseDate: expenseDate,
+                    dollarAmount: dollarAmount,
                     id: Math.random() * 1000,
                 },
             ]);

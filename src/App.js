@@ -2,29 +2,19 @@ import React, { useState, useEffect } from "react";
 import "./CSS/App.css";
 import LocalStorage from "./components/Localstorage";
 import InputForm from "./components/InputForm";
-import ExpenseList from "./components/ExpenseList";
 import Navbar from "./components/Navbar/Navbar";
 import SettingsModal from "./components/SettingsModal";
 
 let root = document.querySelector(":root");
 
 function App() {
-    const [dollarAmount, setDollarAmount] = useState(0);
-    const [vendor, setVendor] = useState("");
-    const [expenseType, setExpenseType] = useState("none");
-    const [expenseDate, setExpenseDate] = useState("");
     const [expenses, setExpenses] = useState([]);
-    const [theme, setTheme] = useState(true);
+    const [theme, setTheme] = useState("0");
     const [show, setShow] = useState(false);
-    const [storage, setStorage] = useState("0");
-    const [updateStorage, setUpdateStorage] = useState(false);
-
-    let myVar;
-    myVar = expenses;
-    // myVar = "Hello";
+    const [saveLocalStorage, setSaveLocalStorage] = useState("0");
 
     useEffect(() => {
-        if (theme) {
+        if (theme === "1") {
             //Dark Mode
             //Nav
             root.style.setProperty("--theme-color-navbar", "#3a005b");
@@ -40,7 +30,7 @@ function App() {
             root.style.setProperty("--app-theme-color-table-row-2", "#2d2d2d");
             //Buttons
             root.style.setProperty("--app-theme-color-table-button", "#ddb244");
-        } else {
+        } else if (theme === "0") {
             //Light Mode
             //Nav
             root.style.setProperty("--theme-color-navbar", "#96151D");
@@ -61,36 +51,31 @@ function App() {
 
     return (
         <div className="App">
-            <LocalStorage updateStorage={updateStorage} expenses={expenses} setExpenses={setExpenses} />
+            <LocalStorage
+                saveLocalStorage={saveLocalStorage}
+                setSaveLocalStorage={setSaveLocalStorage}
+                expenses={expenses}
+                setExpenses={setExpenses}
+                theme={theme}
+                setTheme={setTheme}
+            />
             <Navbar show={show} setShow={setShow} />
             <header>
                 <h1 className="display-5">Expense Tracker</h1>
             </header>
             <InputForm
-                dollarAmount={dollarAmount}
-                setDollarAmount={setDollarAmount}
-                vendor={vendor}
-                setVendor={setVendor}
-                expenseType={expenseType}
-                setExpenseType={setExpenseType}
-                expenseDate={expenseDate}
-                setExpenseDate={setExpenseDate}
                 expenses={expenses}
                 setExpenses={setExpenses}
-                storage={storage}
-                setStorage={setStorage}
-                updateStorage={updateStorage}
-                setUpdateStorage={setUpdateStorage}
+                saveLocalStorage={saveLocalStorage}
+                setSaveLocalStorage={setSaveLocalStorage}
             />
-            {/* <ExpenseList expenses={expenses} setExpenses={setExpenses} /> */}
-
             <SettingsModal
                 show={show}
                 setShow={setShow}
                 theme={theme}
                 setTheme={setTheme}
-                storage={storage}
-                setStorage={setStorage}
+                saveLocalStorage={saveLocalStorage}
+                setSaveLocalStorage={setSaveLocalStorage}
             />
         </div>
     );
