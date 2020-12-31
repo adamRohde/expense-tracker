@@ -1,28 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button, ButtonGroup, ToggleButton } from "react-bootstrap";
 
-const SettingsModal = ({ show, setShow, theme, setTheme, storage, setStorage }) => {
-    const [radioValue, setRadioValue] = useState("0");
-
-    const radios = [
+const SettingsModal = ({ show, setShow, theme, setTheme, saveLocalStorage, setSaveLocalStorage }) => {
+    const themeValues = [
         { name: "Light Mode", value: "0" },
         { name: "Dark Mode", value: "1" },
     ];
-    const localstorage = [
+    const storageValues = [
         { name: "Save Expenses", value: "0" },
         { name: "No Save", value: "1" },
     ];
 
-    useEffect(() => {
-        setTheme(!theme);
-    }, [radioValue]);
+    // useEffect(() => {
+    //     if (saveLocalStorage == "0") {
+    //         console.log("Save local storage");
+    //     }
+    // });
+
+    console.log("Theme values: " + "theme=" + theme + " " + "themeValue.value=" + themeValues.value);
+    console.log("Theme values: " + "theme=" + theme + " " + "themeValue.value=" + themeValues.value);
 
     function themeChange(e) {
-        setRadioValue(e.currentTarget.value);
+        setTheme(e.currentTarget.value);
     }
 
     function storageChange(e) {
-        setStorage(e.currentTarget.value);
+        setSaveLocalStorage(e.currentTarget.value);
     }
 
     const handleClose = () => setShow(false);
@@ -34,35 +37,35 @@ const SettingsModal = ({ show, setShow, theme, setTheme, storage, setStorage }) 
             </Modal.Header>
             <Modal.Body>
                 <ButtonGroup>
-                    {radios.map((radio, idx) => (
+                    {themeValues.map((themeValue, idx1) => (
                         <ToggleButton
                             className="radiobuttons"
                             variant="link"
-                            key={idx}
+                            key={idx1}
                             type="radio"
                             name="radio"
-                            value={radio.value}
-                            checked={radioValue === radio.value}
+                            value={themeValue.value}
+                            checked={theme === themeValue.value}
                             onChange={themeChange}
                         >
-                            {radio.name}
+                            {themeValue.name}
                         </ToggleButton>
                     ))}
                 </ButtonGroup>
                 <div>
                     <ButtonGroup>
-                        {localstorage.map((store, idx) => (
+                        {storageValues.map((storageValue, idx2) => (
                             <ToggleButton
                                 className="radiobuttons"
                                 variant="link"
-                                key={idx}
+                                key={idx2}
                                 type="radio"
                                 name="storage"
-                                value={store.value}
-                                checked={storage === store.value}
+                                value={storageValue.value}
+                                checked={saveLocalStorage === storageValue.value}
                                 onChange={storageChange}
                             >
-                                {store.name}
+                                {storageValue.name}
                             </ToggleButton>
                         ))}
                     </ButtonGroup>
