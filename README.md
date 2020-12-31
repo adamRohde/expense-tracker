@@ -1,6 +1,6 @@
 # Expense Tracker using React
 
-This app was my introduction to React.  I used functional components along with useState and useEffect hooks.  The styling is using Bootstrap and the dark and light themes are handled via CSS variables.  
+This app was my introduction to React.  I used functional components along with useState and useEffect hooks.  The styling is using Bootstrap and the dark and light themes are handled via CSS variables.  Within the settings there is an option to save the expenses, along with your theme into localstorage.  
 
 https://expense-tracker-2020-12-30.herokuapp.com/
 
@@ -13,3 +13,5 @@ Light theme
 Settings Modal
 ![alt text](https://github.com/adamRohde/expense-tracker/blob/main/settings.png)
 
+
+Author - Adam Rohde
