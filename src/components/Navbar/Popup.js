@@ -4,7 +4,6 @@ import Dropdown from "react-bootstrap/Dropdown";
 
 const Popup = (props) => {
     const showModalHandler = () => {
-        console.log("settings clicked");
         props.setShow(true);
     };
 

@@ -16,7 +16,6 @@ function App() {
     useEffect(() => {
         if (theme === "1") {
             //Dark Mode
-            //Nav
             root.style.setProperty("--theme-color-navbar", "#3a005b");
             root.style.setProperty("--theme-color-navbar-text", "#ffffff");
             root.style.setProperty("--theme-color-navbar-burger", "#ffffff");
@@ -32,7 +31,6 @@ function App() {
             root.style.setProperty("--app-theme-color-table-button", "#ddb244");
         } else if (theme === "0") {
             //Light Mode
-            //Nav
             root.style.setProperty("--theme-color-navbar", "#96151D");
             root.style.setProperty("--theme-color-navbar-text", "#000000");
             root.style.setProperty("--theme-color-navbar-burger", "#000000");
