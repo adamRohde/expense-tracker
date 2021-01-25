@@ -43,13 +43,14 @@ const InputForm = (props) => {
         props.setExpenses([
             ...props.expenses,
             {
+                id: Math.random() * 1000,
                 expenseType: expenseType,
                 vendor: vendor,
                 expenseDate: expenseDate,
                 dollarAmount: dollarAmount,
-                id: Math.random() * 1000,
             },
         ]);
+        e.target.reset();
     };
 
     return (
@@ -57,16 +58,17 @@ const InputForm = (props) => {
             <Form onSubmit={submitExpenseHandler}>
                 <div className="form-row">
                     <Form.Group md="6">
-                        {/* ------------------------------------------------- Type ------------------------------------------------- */}
-                        <select onChange={selectExpenseTypeHandler} className="input-expense form-select">
-                            <option value="none">None</option>
+                        <select
+                            onChange={selectExpenseTypeHandler}
+                            className="input-expense form-select"
+                        >
+                            <option value="none">Payment Type</option>
                             <option value="credit">Credit</option>
                             <option value="debit">Debit</option>
                             <option value="cash">Cash</option>
                         </select>
                     </Form.Group>
                     <Form.Group md="6">
-                        {/* ------------------------------------------------- Vendor ------------------------------------------------- */}
                         <input
                             onChange={inputVendorHandler}
                             className="input-expense form-control"
@@ -77,11 +79,13 @@ const InputForm = (props) => {
                 </div>
                 <div className="form-row">
                     <Form.Group md="6">
-                        {/* ------------------------------------------------- Date ------------------------------------------------- */}
-                        <input type="date" onChange={inputExpenseDateHandler} className="input-expense form-control" />
+                        <input
+                            type="date"
+                            onChange={inputExpenseDateHandler}
+                            className="input-expense form-control"
+                        />
                     </Form.Group>
                     <Form.Group md="6">
-                        {/* ------------------------------------------------- Dollar Amount ------------------------------------------------- */}
                         <input
                             type="number"
                             onChange={inputDollarAmountHandler}
@@ -91,7 +95,11 @@ const InputForm = (props) => {
                         />
                     </Form.Group>
                 </div>
-                <button className="btn addExpense-button myButtons" type="submit">
+                <button
+                    className="btn addExpense-button myButtons"
+                    id="addExpenseButton"
+                    type="submit"
+                >
                     <i>Add Expense</i>
                 </button>
             </Form>

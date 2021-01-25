@@ -51,6 +51,7 @@ form {
     display: grid;
     grid-template-rows: 1fr 1fr;
     justify-content: center;
+    margin-top: 5vh;
 }
 
 .form-row {
@@ -60,30 +61,19 @@ form {
     align-items: center;
 }
 
-select,
-form input,
 form button {
-    padding: 0.5rem;
-    font-size: 2rem;
-    border: none;
-    font-size: medium;
-    color: red;
-    color: darkgray;
-    background: rgb(255, 255, 255);
-}
-
-form button {
-    color: #e0e0e0;
-    min-height: 5vh;
+    min-height: 6vh;
     margin: 1em;
-    background: #3f4363;
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 form button:hover {
     background: #d4d4d4;
     color: white;
+}
+
+#addExpenseButton {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
 .expense-container {
@@ -94,12 +84,12 @@ form button:hover {
 }
 
 .table {
-    width: 20vh;
     color: var(--app-theme-color-text);
+    margin: 0 6em 0 6em;
 }
 /* need */
 th {
-    min-width: 20vh;
+    max-width: 5vh;
     place-self: center;
     text-align: center;
     border-bottom: var(--app-theme-color-text) 1px solid;
@@ -125,6 +115,7 @@ tr:nth-child(even) {
 .input-expense {
     margin: 1em;
     width: 25vh;
+    min-height: 6vh;
     font-size: 1rem;
     display: flex;
     padding: 1rem;
@@ -132,6 +123,7 @@ tr:nth-child(even) {
 
 .myButtons {
     color: white;
+    max-height: 2.2em;
     background: var(--app-theme-color-table-button);
 }
 
